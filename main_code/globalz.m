@@ -9,7 +9,7 @@
 function res=globalz(setnum)
     %this is the root directory where all the data is, so
     %we can append shorter strings to reference individual datasets.
-    res.root='/home/sid/wmparisllp/';
+    res.root='/home/sid/wmparisllp';
 
     %figure out which set we're dealing with; in this example, dataset number 7
     if(setnum==7)
@@ -18,7 +18,7 @@ function res=globalz(setnum)
       %structure with pointers to all the cutouts
       res.datasetname='dataset7.mat';
     elseif(setnum==1)
-        ctrelname='moviedata/'
+        ctrelname='data/'
         res.datasetname='moviedata.mat'
     else
       disp('no such dataset');
