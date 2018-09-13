@@ -22,6 +22,14 @@ function [L,a,b] = RGB2Lab(color_image)
 %   B = B/255;
 % end
 
+%Modifiying code to check for grayscale image
+
+if (size(color_image, 3) == 1)
+    color_image(:,:,1) = color_image(:,:,1);
+    color_image(:,:,2) = color_image(:,:,1);
+    color_image(:,:,3) = color_image(:,:,1);
+end
+
 M = size(color_image,1);
 N = size(color_image,2);
 s = M*N;

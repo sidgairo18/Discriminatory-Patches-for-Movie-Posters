@@ -10,5 +10,6 @@ function res=getimg(ds,idx)
     global ds;
   end
   imgs=dsload('.ds.imgs{ds.conf.currimset}');
+  [ds.conf.gbz{ds.conf.currimset}.cutoutdir imgs(idx).fullname]
   res=imread([ds.conf.gbz{ds.conf.currimset}.cutoutdir imgs(idx).fullname]); 
 end

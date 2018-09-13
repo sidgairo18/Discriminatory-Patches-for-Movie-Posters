@@ -10,12 +10,12 @@ isdistributed=1;
 global ds;
 myaddpath;
 ds.prevnm=mfilename;
-dssetout(['/home/sid/wmparisllp/output_data' ds.prevnm '_out']);
+dssetout(['/home/sid/wmparisllp/output_data/' ds.prevnm '_out']);
 %ds.dispoutpath=['/PATH/TO/SOME/WEB/ACCESSIBLE/DIRECTORY/' ds.prevnm '_out/'];
 %loadimset(7);
 % Here use your setdatafunction to use for your own dataset.
 load('moviedata.mat');
-setdataset(imgs, '/home/sid/github/Discriminatory-Patches-for-Movie-Posters/main_code/data/cutouts', '');
+setdataset(imgs, '/home/sid/github/Discriminatory-Patches-for-Movie-Posters/main_code/data/cutouts/', '');
 
 if(isfield(ds.conf.gbz{ds.conf.currimset},'imgsurl'))
   ds.imgsurl=ds.conf.gbz{ds.conf.currimset}.imgsurl;
@@ -48,16 +48,16 @@ ds.conf.detectionParams = struct( ...
 %pick which images to use out of the dataset
 
 imgs=ds.imgs{ds.conf.currimset};
-ds.mycity={'paris'};
+ds.mycity={'genre1'};
 parimgs=find(ismember({imgs.city},ds.mycity));
-toomanyprague=find(ismember({imgs.city},{'prague'})); %there's extra images from prague/london in the datset
+toomanyprague=find(ismember({imgs.city},{'genre2'})); %there's extra images from prague/london in the datset
 toomanyprague=toomanyprague(randperm(numel(toomanyprague)));
 toomanyprague=toomanyprague(1001:end);
-toomanylon=find(ismember({imgs.city},{'london'}));
+toomanylon=find(ismember({imgs.city},{'genre3'}));
 toomanylon=toomanylon(randperm(numel(toomanylon)));
 toomanylon=toomanylon(1001:end);
-parsub=find(ismember({imgs.city},{'paris_sub'}));
-nycsub=find(ismember({imgs.city},{'nyc_sub'}));
+parsub=find(ismember({imgs.city},{'genre1_sub'}));
+nycsub=find(ismember({imgs.city},{'genre4_sub'}));
 
 ds.ispos=zeros(1,numel(imgs));
 ds.ispos(parimgs)=1;
@@ -69,9 +69,9 @@ otherimgs(parsub)=0;
 otherimgs(nycsub)=0;
 otherimgs=find(otherimgs);
 rp=randperm(numel(parimgs));
-parimgs=parimgs(rp(1:2000));%usually 2000 positive images is enough; sometimes even 1000 works.
+parimgs=parimgs(rp(1:168));%usually 2000 positive images is enough; sometimes even 1000 works.
 rp=randperm(numel(otherimgs));
-otherimgs=otherimgs(rp(1:8000));
+otherimgs=otherimgs(rp(1:800));
 ds.myiminds=[parimgs(:); otherimgs(:)];
 ds.parimgs=parimgs;
 
