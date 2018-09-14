@@ -14,5 +14,6 @@ function myaddpath(force)
   if(strcmp(libHome,'PATH_TO_LIBSVM'))
     error('set libsvm path in myaddpath.m!!');
   end
-  addpath([libHome 'libsvm-3.23/']);%3.0-1 is the release we used
+  addpath([libHome 'libsvm-3.23/matlab']);%3.0-1 is the release we used
+  %Remember to compile the mex files in libsvm<version>/matlab directory
 %end
