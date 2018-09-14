@@ -10,7 +10,7 @@ isdistributed=1;
 global ds;
 myaddpath;
 ds.prevnm=mfilename;
-dssetout(['/home/sid/wmparisllp/output_data/' ds.prevnm '_out']);
+dssetout(['/home/sid/github/Discriminatory-Patches-for-Movie-Posters/main_code/output_data/' ds.prevnm '_out']);
 %ds.dispoutpath=['/PATH/TO/SOME/WEB/ACCESSIBLE/DIRECTORY/' ds.prevnm '_out/'];
 %loadimset(7);
 % Here use your setdatafunction to use for your own dataset.
