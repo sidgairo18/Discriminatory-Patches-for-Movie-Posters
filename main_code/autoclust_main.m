@@ -10,12 +10,12 @@ isdistributed=1;
 global ds;
 myaddpath;
 ds.prevnm=mfilename;
-dssetout(['/home/sid/github/Discriminatory-Patches-for-Movie-Posters/main_code/output_data/' ds.prevnm '_out']);
+dssetout(['/media/sid/03b7d4e7-a669-4859-9e0a-ca8cffa50d6c/sid/github/Discriminatory-Patches-for-Movie-Posters/main_code/output_data/' ds.prevnm '_out']);
 %ds.dispoutpath=['/PATH/TO/SOME/WEB/ACCESSIBLE/DIRECTORY/' ds.prevnm '_out/'];
 %loadimset(7);
 % Here use your setdatafunction to use for your own dataset.
 load('moviedata.mat');
-setdataset(imgs, '/home/sid/github/Discriminatory-Patches-for-Movie-Posters/main_code/data/cutouts/', '');
+setdataset(imgs, '/media/sid/03b7d4e7-a669-4859-9e0a-ca8cffa50d6c/sid/github/Discriminatory-Patches-for-Movie-Posters/main_code/data/cutouts/', '');
 
 if(isfield(ds.conf.gbz{ds.conf.currimset},'imgsurl'))
   ds.imgsurl=ds.conf.gbz{ds.conf.currimset}.imgsurl;

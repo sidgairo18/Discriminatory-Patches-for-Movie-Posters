@@ -9,7 +9,7 @@
 function res=globalz(setnum)
     %this is the root directory where all the data is, so
     %we can append shorter strings to reference individual datasets.
-    res.root='/home/sid/wmparisllp';
+    res.root='/media/sid/03b7d4e7-a669-4859-9e0a-ca8cffa50d6c/sid/github/Discriminatory-Patches-for-Movie-Posters/main_code';
 
     %figure out which set we're dealing with; in this example, dataset number 7
     if(setnum==7)
