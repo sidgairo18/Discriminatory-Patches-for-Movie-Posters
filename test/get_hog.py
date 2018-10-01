@@ -84,7 +84,9 @@ def my_svm(X_train, y_train, X_val, y_val, X_test, test_im_names):
 if __name__ == "__main__":
 
     dirname = "./genre2"
-
     get_features(dirname)
+
+    #Have to update for genre3 and genre4
+    #Manually change file names for images and hog features in the get_features() function.
 
     exit(0)
